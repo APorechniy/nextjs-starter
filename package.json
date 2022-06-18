@@ -1,0 +1,95 @@
+{
+  "name": "ciosensor-frontend",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=12.14.0"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_PATH=./lib/lib node ./bin/www",
+    "start": "cross-env NODE_ENV=production NODE_PATH=./lib/lib node ./bin/www",
+    "build": "cross-env NODE_PATH=./lib/lib next build",
+    "test": "cross-env NODE_PATH=./lib/lib xo && NODE_ENV=test NODE_PATH=./lib/lib",
+    "lint": "cross-env NODE_PATH=./lib/lib xo",
+    "lint-fix": "cross-env NODE_PATH=./lib/lib xo --fix",
+    "inspect": "jsinspect ."
+  },
+  "xo": {
+    "parser": "babel-eslint",
+    "extends": "xo-react",
+    "env": [
+      "node",
+      "browser"
+    ],
+    "space": true,
+    "semicolon": false,
+    "rules": {
+      "import/no-unassigned-import": 0,
+      "react/no-array-index-key": 0,
+      "capitalized-comments": 0,
+      "react/jsx-no-target-blank": 0,
+      "react-hooks/exhaustive-deps": 0
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "moduleDirectory": [
+            "node_modules",
+            "lib/lib"
+          ]
+        }
+      },
+      "react": {
+        "version": "16.8.6"
+      }
+    },
+    "ignores": [
+      "public"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "cookie-parser": "^1.4.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.16.3",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "morgan": "^1.10.0",
+    "next": "^9.4.4",
+    "next-redux-wrapper": "^6.0.2",
+    "next-seo": "^4.5.0",
+    "nextjs-progressbar": "^0.0.5",
+    "qs": "^6.9.4",
+    "query-string": "^6.4.2",
+    "react-bootstrap": "^1.0.1",
+    "react-indiana-drag-scroll": "^1.6.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.26.8",
+    "smoothscroll-polyfill": "^0.4.4",
+    "styled-components": "^5.1.1",
+    "uuid": "^3.2.1",
+    "validator": "^11.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "husky": "^4.2.5",
+    "jsinspect": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "xo": "^0.32.0"
+  }
+}
