@@ -1,2 +1,4 @@
-# CIO sensor frontend
+# Next.js Starter
+
+yarn dev
 
